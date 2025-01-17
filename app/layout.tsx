@@ -21,7 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${jakartaSans.className} antialiased`}>{children}</body>
+      <body className={`${jakartaSans.className} text-white antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }

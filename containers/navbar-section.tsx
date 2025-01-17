@@ -20,11 +20,13 @@ export default function NavbarSection() {
 
   return (
     <section
-      className={`fixed w-full h-16 flex items-center justify-center lg:justify-normal lg:px-44 ${
-        isScrolled && "backdrop-blur-sm bg-white/80 duration-300"
+      className={`fixed w-full h-16 flex items-center justify-center lg:justify-normal lg:px-16 ${
+        isScrolled && "backdrop-blur-sm bg-black/70 duration-300"
       }`}
     >
-      <p className="font-bold text-2xl">RoadDetection</p>
+      <p className="font-bold text-2xl text-center">
+        Klasifikasi Voice Phishing Percakapan Telepon
+      </p>
     </section>
   );
 }

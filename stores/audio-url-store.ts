@@ -1,11 +1,11 @@
 import { create } from "zustand";
 
-interface ImageUrlStore {
+interface AudioUrlStore {
   url: string;
   setUrl: (url: string) => void;
 }
 
-export const useImageUrl = create<ImageUrlStore>((set) => ({
+export const useAudioUrl = create<AudioUrlStore>((set) => ({
   url: "",
   setUrl: (url: string) => set(() => ({ url })),
 }));
