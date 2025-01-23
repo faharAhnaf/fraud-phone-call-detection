@@ -3,15 +3,16 @@
 import { useLoadingApi } from "@/stores/loading-api-store";
 import PredictionResult from "@/components/ResultPrediction";
 import ConfidanceResult from "@/components/ResultConfidance";
-import TranscriptionResult from "@/components/ResultTranscription";
+import { useAudio } from "@/stores/audio-store";
+import TranscriptionResultRev from "@/components/ResultTranscriptRev";
 // import { useAudio } from "@/stores/audio-store";
 
 export default function ResultSection() {
   const { loading } = useLoadingApi();
-  // const { audio } = useAudio();
+  const { audio } = useAudio();
   return (
     <>
-      {!loading && (
+      {audio && !loading && (
         <>
           <section className="pt-10 grid lg:grid-cols-2 mb-20 gap-5 m-5">
             {[
@@ -27,7 +28,7 @@ export default function ResultSection() {
               },
               {
                 title: "Transkripsi Percakapan",
-                section: <TranscriptionResult />,
+                section: <TranscriptionResultRev />,
                 span: "col-span-2",
               },
             ].map((item, index) => (

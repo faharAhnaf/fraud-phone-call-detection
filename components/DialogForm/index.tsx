@@ -69,7 +69,7 @@ export default function FormDialog() {
       const res = await addDataPicture(formData);
       if (res) {
         setData(res.data);
-        setAudio(false);
+        // setAudio(false);
       }
 
       console.log("Data: ", res);

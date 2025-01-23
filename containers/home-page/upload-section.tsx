@@ -4,21 +4,21 @@ import { useUploadDialog } from "@/stores/upload-dialog-store";
 import { Button } from "@/components/ui/button";
 import { Upload } from "lucide-react";
 import UploadDialog from "@/components/DialogUpload";
-import { useAudio } from "@/stores/audio-store";
+import { useLoadingApi } from "@/stores/loading-api-store";
 
 export default function UploadSection() {
   const setUploadDialogModal = useUploadDialog((s) => s.setOpen);
-  const { audio } = useAudio();
+  const { loading } = useLoadingApi();
 
   return (
-    <section className="pt-20 grid lg:place-items-center lg:max-w-3xl mx-auto text-center space-y-3">
+    <section className="pt-20 lg:place-items-center lg:max-w-3xl mx-auto text-center space-y-10">
       <p className="font-black lg:text-7xl text-4xl">
         Aplikasi Klasifikasi Phishing Percakapan Telepon
       </p>
 
-      {!audio && (
+      {!loading && (
         <>
-          <p className=" lg:text-3xl text-xl">
+          <p className="lg:text-xl text-xl">
             Masukan file audio untuk dilakukan klasifikasi Phishing
           </p>
           <Button
