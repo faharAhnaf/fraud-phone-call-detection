@@ -10,26 +10,27 @@ export default function ConfidanceResult() {
         <div className="w-full space-y-3">
           <div className="border rounded-xl shadow flex flex-col items-center">
             <div className="border border-b-2 w-full rounded-t-xl flex items-center justify-center">
-              <HeaderTwo>Nilai Kepercayaan</HeaderTwo>
+              <HeaderTwo>Nilai Akurasi</HeaderTwo>
             </div>
             <div className="space-y-2 w-full p-4">
               {data.confidence_scores.map((score, i) => {
                 let key = "";
+                // const score = score;
                 switch (i) {
                   case 0:
-                    key = "Modus Phishing 1 :";
+                    key = "Penipuan Pinjaman Online Ilegal :";
                     break;
                   case 1:
-                    key = "Modus Phishing 2 :";
+                    key = "Penipuan Berkedok Krisis Keluarga :";
                     break;
                   case 2:
-                    key = "Modus Phishing 3 :";
+                    key = "Penipuan Investasi Ilegal :";
                     break;
                   case 3:
-                    key = "Modus Phishing 4 :";
+                    key = "Penipuan Jual Beli (Barang/Jasa) :";
                     break;
                   case 4:
-                    key = "Modus Phishing 5 :";
+                    key = "Penipuan Berkedok Hadiah :";
                     break;
                   case 5:
                     key = "Non Phising :";
@@ -39,7 +40,10 @@ export default function ConfidanceResult() {
                   <div key={i}>
                     <div className="flex items-center justify-between">
                       <p className="font-medium">
-                        {key} <span className="font-bold">{score}</span>
+                        {key}{" "}
+                        <span className="font-bold">
+                          {score.replace(".", ",")}
+                        </span>
                       </p>
                     </div>
                   </div>
@@ -50,7 +54,7 @@ export default function ConfidanceResult() {
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center">
-          <HeaderTwo>Tidak Ada Hasil Nilai Kepercayaan</HeaderTwo>
+          <HeaderTwo>Tidak Ada Hasil Nilai Akurasi</HeaderTwo>
         </div>
       )}
     </>

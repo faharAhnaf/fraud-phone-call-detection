@@ -10,7 +10,7 @@ export default function PredictionResult() {
         <div className="w-full space-y-3">
           <div className="border rounded-xl shadow flex flex-col items-center">
             <div className="border border-b-2 w-full flex rounded-t-xl items-center justify-center">
-              <HeaderTwo>Label Prediksi</HeaderTwo>
+              <HeaderTwo>Keterangan Label Prediksi</HeaderTwo>
             </div>
             <div className="space-y-2 w-full p-4">
               {data.predicted_labels.map((predict, i) => {

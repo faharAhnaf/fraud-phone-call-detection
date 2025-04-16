@@ -26,6 +26,7 @@ const schema = z.object({
       (file) => file && file[0] && ACCEPTED_AUDIO_TYPES.includes(file[0].type),
       "Only .mp3 & .wav format yang dibolehkan"
     ),
+  denoised: z.string(),
 });
 
 type FormData = z.infer<typeof schema>;
@@ -58,17 +59,18 @@ export default function FormDialog() {
       }
 
       const formData = new FormData();
+      console.log(data);
 
-      // formData.append("long", data.long.toString());
-      // formData.append("lat", data.lat.toString());
       if (data.audio[0]) {
         formData.append("audio", data.audio[0]);
+        formData.append("denoised", data.denoised);
       }
 
       setUploadDialogModal(false);
       const res = await addDataPicture(formData);
       if (res) {
         setData(res.data);
+        console.log(res);
         // setAudio(false);
       }
 
@@ -98,6 +100,8 @@ export default function FormDialog() {
             {errors.audio && (
               <ErrorMessage message={errors.audio.message as string} />
             )}
+
+            <input type="text" hidden value={0} {...register("denoised")} />
           </div>
         </li>
         <li className="flex w-full justify-end">
