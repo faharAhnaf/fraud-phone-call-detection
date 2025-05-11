@@ -16,7 +16,9 @@ export default function ConfidanceResult() {
   // Gabungkan label dan score
   const results = data.predicted_labels.map((label, i) => {
     // Ubah string persen ke number
-    const scoreStr = data.confidence_scores[i]?.replace("%", "").replace(",", ".");
+    const scoreStr = data.confidence_scores[i]
+      ?.replace("%", "")
+      .replace(",", ".");
     const score = parseFloat(scoreStr || "0");
     return {
       label,
@@ -35,7 +37,7 @@ export default function ConfidanceResult() {
         <div className="w-1/2 mx-auto space-y-3">
           <div className="border rounded-xl shadow flex flex-col items-center relative">
             <div className="border border-b-2 w-full rounded-t-xl flex items-center justify-center">
-              <HeaderTwo>HasilKlasifikasi Modus Voice Phishing</HeaderTwo>
+              <HeaderTwo>Hasil Klasifikasi Modus Voice Phishing</HeaderTwo>
             </div>
             <div className="space-y-2 w-full p-4">
               {filtered.length > 0 ? (
@@ -48,7 +50,9 @@ export default function ConfidanceResult() {
                   </div>
                 ))
               ) : (
-                <div className="text-center text-lg font-bold">Belum Terklasifikasi</div>
+                <div className="text-center text-lg font-bold">
+                  Belum Terklasifikasi
+                </div>
               )}
             </div>
             {/* Note kiri bawah */}
@@ -65,4 +69,3 @@ export default function ConfidanceResult() {
     </>
   );
 }
-
