@@ -13,7 +13,7 @@ export default function UploadSection() {
   return (
     <section className="pt-20 lg:place-items-center lg:max-w-3xl mx-auto text-center space-y-10">
       <p className="font-black lg:text-7xl text-4xl">
-        Aplikasi Klasifikasi Phishing Percakapan Telepon
+        Aplikasi Klasifikasi Voice Phishing Percakapan Telepon
       </p>
 
       {!loading && (

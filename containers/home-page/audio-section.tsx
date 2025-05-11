@@ -30,8 +30,12 @@ export default function AudioSection() {
   }, []);
 
   return (
-    <section className="grid mx-auto lg:w-96 ">
-      {loading && <LoadingAudio />}
-    </section>
+    <>
+    {loading && (
+      <section className="grid mx-auto lg:w-96 ">
+       <LoadingAudio />
+      </section>
+    )}
+    </>
   );
 }

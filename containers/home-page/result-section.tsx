@@ -17,14 +17,9 @@ export default function ResultSection() {
           <section className="pt-10 grid lg:grid-cols-2 mb-20 gap-5 m-5">
             {[
               {
-                title: "Label Prediksi",
-                section: <PredictionResult />,
-                span: "col-span-1",
-              },
-              {
                 title: "Nilai Kepercayaan",
                 section: <ConfidanceResult />,
-                span: "col-span-1",
+                span: "col-span-2",
               },
               {
                 title: "Transkripsi Percakapan",

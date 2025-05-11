@@ -1,3 +1,3 @@
-export default function HeaderTwo({ children }: { children: React.ReactNode }) {
-  return <h1 className="font-bold text-xl p-2">{children}</h1>;
+export default function HeaderTwo({ children, ...props }: { children: React.ReactNode }) {
+  return <h1 className="font-bold text-xl p-2" {...props}>{children}</h1>;
 }
